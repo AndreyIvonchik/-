@@ -1,0 +1,82 @@
+body {
+	background-color: #f8f8f8;
+	border-top: 10px solid #7e7e7e;
+	font-family: 'Electrolize', sans-serif;
+	
+}
+#settings{
+	display: none;
+	background: #888;
+    border: 7px solid silver;
+	border-style: inset;
+    z-index: 1;
+    color: black;
+    padding: 10px; /* Поля */
+    margin-top: 10px; /* Отступ сверху */
+} 
+
+
+.table{
+	margin-top: 5px;
+	border: 7px solid silver;
+	border-style: inset;
+	width: max-content;
+    vertical-align: middle;
+}
+
+.wrapper {
+	text-align: center;
+	display: table;
+	vertical-align: top;
+	margin-left: auto;
+	margin-right: auto; 
+}
+.wrapper2 {
+	text-align: center;
+	display: table;
+	vertical-align: top;
+	margin-left: auto;
+	margin-right: auto; 
+}
+.panel {
+	font-size: 10px;
+	font-weight:bold;
+	background: black;
+	margin-top: 5px;
+	border: 7px solid silver;
+	border-style: inset;
+	color: black;
+}
+
+.level {
+	text-align: center;
+	margin-top: 5px;
+	display: inline-block;
+	color: black;
+	font-weight: 700;
+	text-decoration: none;
+	user-select: none;
+	padding: .5em 2em;
+	outline: none;
+	border: 2px solid silver;
+	border-radius: 1px;
+	transition: 0.2s;
+} 
+.level:hover { background: silver; }
+.level:active { background: gray; }
+	
+
+
+.cell {
+	font-weight:bold;
+	font-size:30px;
+	-webkit-user-select: none;
+	display: inline-block;
+	vertical-align: bottom;
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    background-color: white;
+    box-shadow: 0 0 4px 0px black;
+   
+}
