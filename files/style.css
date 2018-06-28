@@ -1,24 +1,31 @@
+@font-face {
+    font-family: Timer; 
+    src: url(../files/fonts.ttf); 
+   }
+
 body {
-	background-color: #f8f8f8;
+	background-color: gainsboro;
 	border-top: 10px solid #7e7e7e;
 	font-family: 'Electrolize', sans-serif;
 	
 }
+
 #settings{
+	margin-top: 10px;
 	display: none;
-	background: #888;
-    border: 7px solid silver;
+	background: gainsboro;
+    border: 5px solid whitesmoke;
 	border-style: inset;
     z-index: 1;
     color: black;
     padding: 10px; /* Поля */
-    margin-top: 10px; /* Отступ сверху */
 } 
 
 
 .table{
-	margin-top: 5px;
-	border: 7px solid silver;
+	margin-top: 10px;
+	background: gainsboro;
+	border: 5px solid whitesmoke;
 	border-style: inset;
 	width: max-content;
     vertical-align: middle;
@@ -32,20 +39,30 @@ body {
 	margin-right: auto; 
 }
 .wrapper2 {
-	text-align: center;
+	text-align: left;
 	display: table;
 	vertical-align: top;
 	margin-left: auto;
 	margin-right: auto; 
 }
-.panel {
-	font-size: 10px;
-	font-weight:bold;
-	background: black;
-	margin-top: 5px;
-	border: 7px solid silver;
+#panel {
+	text-align: left;
+	margin-top: 10px;
+	background: gainsboro;
+    border: 5px solid whitesmoke;
 	border-style: inset;
-	color: black;
+	font-size: 20pt;
+	font-weight: bolder;
+	font-family: Timer;
+}
+
+#countFlags{
+	color: red;
+}
+
+#timer{
+	float: right;
+	color: red;
 }
 
 .level {
@@ -80,3 +97,4 @@ body {
     box-shadow: 0 0 4px 0px black;
    
 }
+

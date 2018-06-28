@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -23,10 +23,12 @@
 							<input id="ok" type="button" value="ОК" onclick = "game.play(4)">
 							<input id="cancel" type="button" value="Отмена" onclick = "openbox()" >
 					</div>
-					<div id = "panel" >
-						
-					</div>
 				</div>
+				<div id = "panel" >
+					<span id ="countFlags">0</span>
+					<span id ="timer">00:00:00</span>
+				</div>
+				
 			</div>
 			<div class="wrapper">
 				<div id = "table" onclick = "game.left_click()" oncontextmenu="game.right_click()" ></div>

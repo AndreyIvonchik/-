@@ -49,14 +49,14 @@ class Sapper {
 				height = +document.getElementById("height").value ? +document.getElementById("height").value : 8;
 				bombs = +document.getElementById("countMin").value ? +document.getElementById("countMin").value : Math.floor(width * height / 4);
 			
-				if(height * width  > bombs){
+				if(height * width  > bombs && width <= 100 && height <= 100){
 					this.init({
 						width, 
 						height, 
 						bombs
 					});
 				}else{
-					alert("Бомб не может быть больше количества ячеек");
+					alert("Введите корректное значение. (Ширина и высота меньше 100, количество бомб меньше количества ячеек.)");
 				}
 				break;
 			}
@@ -68,14 +68,18 @@ class Sapper {
 		this.width = obj.width ; 
 		this.height = obj.height; 
 		this.bombs = obj.bombs;
-		
-		if(this.field){
-			document.getElementById('table').innerHTML = null;
-		}
-		this.field = this.createMatrix();
+		this.countFlags = 0;
 		this.isEndOfGame = false;
 		this.firstClick = true;
 		
+		if(this.field){
+			document.getElementById("timer").textContent = "00:00:00";
+			document.getElementById('table').innerHTML = null;
+			clearInterval(this.timer);	
+		}
+
+		document.getElementById("countFlags").textContent = this.bombs;
+		this.field = this.createMatrix();
 	}
 	
 	createCell(table, i, j) {
@@ -89,7 +93,7 @@ class Sapper {
 			table.appendChild(document.createElement("br"));
 		}
 	}
-	
+
 	createMatrix () {
 		var table = document.getElementById('table');
 		var matrix = [];
@@ -183,6 +187,7 @@ class Sapper {
 			this.field = this.bombPositions(this.field, x, y);
 			this.field = this.countBomb(this.field);
 			this.firstClick = false;
+			this.createTimer();
 		}
 		this.openCell(x, y);
 		this.checkForWin();
@@ -192,6 +197,7 @@ class Sapper {
 		event.preventDefault();
 		if(this.isEndOfGame) return;
 
+		var countFlagsElement = document.getElementById("countFlags");
 		var target = event.target;
 		var x = +target.id.split(".")[0];
 		var y = +target.id.split(".")[1];
@@ -201,10 +207,17 @@ class Sapper {
 		if(this.field[x][y].open) return;
 		if(this.field[x][y].flag){
 			this.field[x][y].flag = false;
+			this.countFlags--;
+
 			target.style.backgroundImage = null;
+			countFlagsElement.textContent = this.bombs - this.countFlags;
+			
 		}else{
 			this.field[x][y].flag = true;
+			this.countFlags++;
+
 			target.style.backgroundImage = "url(files/images/flag.png)";
+			countFlagsElement.textContent = this.bombs - this.countFlags;
 		}
 		this.checkForWin();
 	}
@@ -351,8 +364,27 @@ class Sapper {
 			alert("Вы проиграли");
 		}
 		this.isEndOfGame = true;
+		clearInterval(this.timer);
 		return;
 	}
+
+	createTimer(){
+		var start = new Date();
+		this.timer = setInterval(function () {
+			
+		var now = new Date();
+		var hours = Math.floor((now - start)/3600/1000), 
+			minutes = Math.floor((now - start)/60/1000), 
+			seconds = Math.floor((now - start)/1000) % 60;
+		
+		var elem = document.getElementById("timer");
+		elem.innerHTML = ((hours < 10) ? "0" + hours : hours) + ":" + 
+		((minutes < 10)? "0" + minutes : minutes)+ ":" + ((seconds < 10) ? "0" + seconds : seconds);
+		
+		}, 1000);
+	}
+
+
 }
 
 function openbox(){
