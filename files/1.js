@@ -73,7 +73,7 @@ class Sapper {
 		this.firstClick = true;
 		
 		if(this.field){
-			document.getElementById("timer").textContent = "00:00:00";
+			document.getElementById("timer").textContent = "00:00";
 			document.getElementById('table').innerHTML = null;
 			clearInterval(this.timer);	
 		}
@@ -369,18 +369,15 @@ class Sapper {
 	}
 
 	createTimer(){
-		var start = new Date();
-		this.timer = setInterval(function () {
-			
-		var now = new Date();
-		var hours = Math.floor((now - start)/3600/1000), 
-			minutes = Math.floor((now - start)/60/1000), 
-			seconds = Math.floor((now - start)/1000) % 60;
-		
 		var elem = document.getElementById("timer");
-		elem.innerHTML = ((hours < 10) ? "0" + hours : hours) + ":" + 
-		((minutes < 10)? "0" + minutes : minutes)+ ":" + ((seconds < 10) ? "0" + seconds : seconds);
-		
+		var time = 0;
+		var formatter = new Intl.DateTimeFormat("ru", {
+			minute: "numeric",
+			second: "numeric"
+		  });
+		this.timer = setInterval(function () {
+			time += 1000;
+			elem.innerHTML = formatter.format(time);
 		}, 1000);
 	}
 

@@ -7,6 +7,7 @@ body {
 	background-color: gainsboro;
 	border-top: 10px solid #7e7e7e;
 	font-family: 'Electrolize', sans-serif;
+	box-sizing: border-box;
 	
 }
 
@@ -57,10 +58,12 @@ body {
 }
 
 #countFlags{
+	margin-left: 10px;
 	color: red;
 }
 
 #timer{
+	margin-right: 10px;
 	float: right;
 	color: red;
 }
@@ -94,7 +97,13 @@ body {
     height: 30px;
     margin: 3px;
     background-color: white;
-    box-shadow: 0 0 4px 0px black;
+	box-shadow: 0 0 4px 0px black;
+	background-repeat: no-repeat;
+	border: 1px solid transparent; 
    
 }
 
+.cell:hover{
+	background-color: whitesmoke;
+	border: 1px solid black;
+}
