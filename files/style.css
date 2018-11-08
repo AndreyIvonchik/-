@@ -47,7 +47,7 @@ body {
 	margin-right: auto; 
 }
 #panel {
-	text-align: left;
+	text-align: center;
 	margin-top: 10px;
 	background: gainsboro;
     border: 5px solid whitesmoke;
@@ -57,8 +57,14 @@ body {
 	font-family: Timer;
 }
 
+#newGame{
+	margin-left: 46px;
+	
+}
+
 #countFlags{
 	margin-left: 10px;
+	float: left;
 	color: red;
 }
 

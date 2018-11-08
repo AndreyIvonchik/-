@@ -65,9 +65,11 @@ class Sapper {
 	}
 
 	init (obj) {
-		this.width = obj.width ; 
-		this.height = obj.height; 
-		this.bombs = obj.bombs;
+		if(obj){
+			this.width = obj.width ; 
+			this.height = obj.height; 
+			this.bombs = obj.bombs;
+		}
 		this.countFlags = 0;
 		this.isEndOfGame = false;
 		this.firstClick = true;
@@ -75,6 +77,7 @@ class Sapper {
 		if(this.field){
 			document.getElementById("timer").textContent = "00:00";
 			document.getElementById('table').innerHTML = null;
+			document.getElementById('newGame').src = "files/images/face.png";
 			clearInterval(this.timer);	
 		}
 
@@ -183,6 +186,7 @@ class Sapper {
 		var y = +target.id.split(".")[1];
 
 		if(target.className != "cell") return;
+		
 		if(this.firstClick){
 			this.field = this.bombPositions(this.field, x, y);
 			this.field = this.countBomb(this.field);
@@ -357,11 +361,13 @@ class Sapper {
 	}
 	
 	gameOver(wins){
+		var face = document.getElementById("newGame");
+
 		this.openAllBombs();
 		if(wins){
-			alert("Вы выйграли");
+			face.src = "files/images/face-win.png";
 		}else if(!wins){
-			alert("Вы проиграли");
+			face.src = "files/images/face-loser.png";
 		}
 		this.isEndOfGame = true;
 		clearInterval(this.timer);
