@@ -2,43 +2,43 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Мой сапёр</title>
-  <link rel="stylesheet" href="files/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Мой сапёр</title>
+    <link rel="stylesheet" href="files/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
 </head>
 
 <body>
-    <div id="game">
-			<div class="wrapper">
-				<input class = "level" id="easy" type="button" value="Простой" onclick = "game.play(1)">
-				<input class = "level" id="medium" type="button" value="Средний" onclick = "game.play(2)">
-				<input class = "level" id="hard" type="button" value="Сложный" onclick = "game.play(3)">
-				<input class = "level" id="custom" type="button" value="Особый" onclick = "openbox()">
-				<div class="wrapper2">
-					<div id="settings">
-						<p>Ширина поля:&nbsp;<input maxlength="3" id="width" size="3" type="number"  min="1" max="100"></p>
-						<p>Высота поля:&nbsp;<input maxlength="3" id="height" size="3" type="number" min="1" max="100"></p>
-						<p>Количество мин:&nbsp;<input maxlength="4" id="countMin" size="3" type="number" min="1"></p>
-							<input id="ok" type="button" value="ОК" onclick = "game.play(4)">
-							<input id="cancel" type="button" value="Отмена" onclick = "openbox()" >
-					</div>
-				</div>
-				<div id = "panel" >
-					<span id ="countFlags">0</span>
-					<img id ="newGame" src="files/images/face.png" onclick="game.init()">
-					<span id ="timer">00:00</span>
-				</div>
-				
-			</div>
-			<div class="wrapper">
-				<div id = "table" onclick = "game.left_click()" oncontextmenu="game.right_click()" ></div>
-			</div>
+<div id="game">
+    <div class="wrapper">
+        <input class="level" id="easy" type="button" value="Простой" onclick="game.play(1)">
+        <input class="level" id="medium" type="button" value="Средний" onclick="game.play(2)">
+        <input class="level" id="hard" type="button" value="Сложный" onclick="game.play(3)">
+        <input class="level" id="custom" type="button" value="Особый" onclick="openbox()">
+        <div class="wrapper2">
+            <div id="settings">
+                <p>Ширина поля:&nbsp;<input maxlength="3" id="width" size="3" type="number" min="1" max="100"></p>
+                <p>Высота поля:&nbsp;<input maxlength="3" id="height" size="3" type="number" min="1" max="100"></p>
+                <p>Количество мин:&nbsp;<input maxlength="4" id="countMin" size="3" type="number" min="1"></p>
+                <input id="ok" type="button" value="ОК" onclick="game.play(4)">
+                <input id="cancel" type="button" value="Отмена" onclick="openbox()">
+            </div>
+        </div>
+        <div id="panel">
+            <span id="countFlags">0</span>
+            <img id="newGame" src="files/images/face.png" onclick="game.init()">
+            <span id="timer">00:00</span>
+        </div>
+
     </div>
+    <div class="wrapper">
+        <div id="table" onclick="game.leftClick()" oncontextmenu="game.rightClick()"></div>
+    </div>
+</div>
 
 
 </body>
 
 </html>
 
-<script src = 'files/1.js'></script>
+<script async src='files/1.js'></script>

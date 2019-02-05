@@ -1,115 +1,122 @@
 @font-face {
-    font-family: Timer; 
-    src: url(../files/fonts.ttf); 
-   }
-
-body {
-	background-color: gainsboro;
-	border-top: 10px solid #7e7e7e;
-	font-family: 'Electrolize', sans-serif;
-	box-sizing: border-box;
-	
+    font-family: Timer;
+    src: url(../files/fonts.ttf);
 }
 
-#settings{
-	margin-top: 10px;
-	display: none;
-	background: gainsboro;
+body {
+    background-color: gainsboro;
+    border-top: 10px solid #7e7e7e;
+    font-family: 'Electrolize', sans-serif;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+#settings {
+    margin-top: 10px;
+    display: none;
+    background: gainsboro;
     border: 5px solid whitesmoke;
-	border-style: inset;
+    border-style: inset;
     z-index: 1;
     color: black;
     padding: 10px; /* Поля */
-} 
+}
 
 
-.table{
-	margin-top: 10px;
-	background: gainsboro;
-	border: 5px solid whitesmoke;
-	border-style: inset;
-	width: max-content;
+.table {
+    margin-top: 10px;
+    background: gainsboro;
+    border: 5px solid whitesmoke;
+    border-style: inset;
+    width: max-content;
     vertical-align: middle;
 }
 
 .wrapper {
-	text-align: center;
-	display: table;
-	vertical-align: top;
-	margin-left: auto;
-	margin-right: auto; 
+    text-align: center;
+    display: table;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 .wrapper2 {
-	text-align: left;
-	display: table;
-	vertical-align: top;
-	margin-left: auto;
-	margin-right: auto; 
+    text-align: left;
+    display: table;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 #panel {
-	text-align: center;
-	margin-top: 10px;
-	background: gainsboro;
+    text-align: center;
+    margin-top: 10px;
+    background: gainsboro;
     border: 5px solid whitesmoke;
-	border-style: inset;
-	font-size: 20pt;
-	font-weight: bolder;
-	font-family: Timer;
+    border-style: inset;
+    font-size: 20pt;
+    font-weight: bolder;
+    font-family: Timer;
 }
 
-#newGame{
-	margin-left: 46px;
-	
+#newGame {
+    margin-left: 46px;
+
 }
 
-#countFlags{
-	margin-left: 10px;
-	float: left;
-	color: red;
+#countFlags {
+    margin-left: 10px;
+    float: left;
+    color: red;
 }
 
-#timer{
-	margin-right: 10px;
-	float: right;
-	color: red;
+#timer {
+    margin-right: 10px;
+    float: right;
+    color: red;
 }
 
 .level {
-	text-align: center;
-	margin-top: 5px;
-	display: inline-block;
-	color: black;
-	font-weight: 700;
-	text-decoration: none;
-	user-select: none;
-	padding: .5em 2em;
-	outline: none;
-	border: 2px solid silver;
-	border-radius: 1px;
-	transition: 0.2s;
-} 
-.level:hover { background: silver; }
-.level:active { background: gray; }
-	
+    text-align: center;
+    margin-top: 5px;
+    display: inline-block;
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .5em 2em;
+    outline: none;
+    border: 2px solid silver;
+    border-radius: 1px;
+    transition: 0.2s;
+}
+
+.level:hover {
+    background: silver;
+}
+
+.level:active {
+    background: gray;
+}
 
 
 .cell {
-	font-weight:bold;
-	font-size:30px;
-	-webkit-user-select: none;
-	display: inline-block;
-	vertical-align: bottom;
+    font-weight: bold;
+    font-size: 30px;
+    -webkit-user-select: none;
+    display: inline-block;
+    vertical-align: bottom;
     width: 30px;
     height: 30px;
     margin: 3px;
     background-color: white;
-	box-shadow: 0 0 4px 0px black;
-	background-repeat: no-repeat;
-	border: 1px solid transparent; 
-   
+    box-shadow: 0 0 4px 0px black;
+    background-repeat: no-repeat;
+    border: 1px solid transparent;
+
 }
 
-.cell:hover{
-	background-color: whitesmoke;
-	border: 1px solid black;
+.cell:hover {
+    background-color: whitesmoke;
+    border: 1px solid black;
 }
